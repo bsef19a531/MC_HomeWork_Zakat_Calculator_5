@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:alpha="1"
+    android:background="@drawable/zakatbg"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:alpha="1"
+        android:contentDescription="Main Heading"
+        android:fontFamily="cursive"
+        android:text="Zakat Calculator"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="#FFFFFF"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        android:typeface="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="1"
+        android:contentDescription="Description of App"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="اپنے مال پر زکوۃ کا حساب لگائیں"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:typeface="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.045" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:alpha="1"
+        app:cardBackgroundColor="#FFFFFF"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="5dp"
+        app:contentPaddingBottom="20dp"
+        app:contentPaddingLeft="10dp"
+        app:contentPaddingRight="10dp"
+        app:contentPaddingTop="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.278">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="card text"
+                android:fontFamily="casual"
+                android:padding="10sp"
+                android:paddingStart="20sp"
+                android:paddingLeft="10sp"
+                android:paddingTop="10sp"
+                android:paddingEnd="20sp"
+                android:paddingRight="10sp"
+                android:paddingBottom="10sp"
+                android:text="اپنی کل مالی رقم درج کریں۔"
+                android:textAlignment="viewEnd"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="#3F6540"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:typeface="normal" />
+
+            <EditText
+                android:id="@+id/amountPanel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="#3F6540"
+                android:ems="10"
+                android:fontFamily="casual"
+                android:hint="زقم یہاں درج کریں"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal"
+                android:padding="10dp"
+                android:paddingStart="10dp"
+                android:paddingLeft="20dp"
+                android:paddingEnd="10dp"
+                android:paddingRight="20dp"
+                android:singleLine="true"
+                android:textAlignment="viewEnd"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:typeface="normal"
+                tools:ignore="TextContrastCheck" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/calculateBtn"
+                    style="@style/Widget.AppCompat.Button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="1"
+                    android:background="#3F9341"
+                    android:fontFamily="casual"
+                    android:onClick="calculateZakat"
+                    android:padding="10dp"
+                    android:text="حساب لگائیں"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:typeface="normal"
+                    tools:ignore="TextContrastCheck" />
+
+                <Button
+                    android:id="@+id/cancelBtn"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="1"
+                    android:background="#3F9341"
+                    android:fontFamily="casual"
+                    android:onClick="clearAll"
+                    android:padding="10dp"
+                    android:text="منسوخ کریں"
+                    android:textColor="#FFFDFD"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:typeface="normal"
+                    tools:ignore="TextContrastCheck" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/resultTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:alpha="1"
+                android:contentDescription="result text"
+                android:fontFamily="casual"
+                android:padding="10dp"
+                android:paddingStart="20dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="20dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="10dp"
+                android:textAlignment="viewEnd"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="#3F6540"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:typeface="normal"
+                android:visibility="visible"
+                tools:visibility="gone" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
